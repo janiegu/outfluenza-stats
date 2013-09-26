@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+    <title>Outfluenza</title>
+    <link rel="stylesheet" href="/statsStyle.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+  <div class="border">
+	<div class="header">
+        <div class="maintitle">New Jersey</div>
+    </div>
+  </div>
+  <br>
+  <div class="section">
+      <div class="subtitle">General Statistics</div><br>
+      <div id="statBubbles">
+      	<div class="textCircle"><img width="50px" src="googleMaps.jpg"><br><br>the nearest outbreak is <span class="emphasis">5.3 mi</span> away in 07751.</div>
+      	<div class="textCircle"><br><img width="70px" src="disease.jpg"><br><br>over the last month, there has been a daily average of <span class="emphasis">5 new cases</span> per capita.</div>
+      	<div class="textCircle"><br><img width="70px" src="calendar.png"><br>the number of influenza cases detected increased <span class="emphasis">3.2%</span> from this time last year.</div>
+      </div>
+  </div>
+  <div class="section">
+    <div class="subtitle">Demographic Breakdown</div><br>
+    <div class="left">
+    <div class="graphtitle">Distribution of infected ages</div>
+    <div id="ageDistribution">
+    	<label><input type="checkbox"> Sort values</label>
+    </div>
+    </div>
+    <div class="right">
+    <div class="graphtitle">Gender split of infected</div>
+    <div id="genderSplit"></div>
+    </div>
+  </div>
+  <div>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="/statsScript.js"></script>
+  </div>
+  </body>
+</html>
