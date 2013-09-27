@@ -13,7 +13,8 @@ var svgTime = null,
 	dataCirclesGroup = null,
 	dataLinesGroup = null;
 
-function draw() {
+var data=[];
+function draw(error, time) {
 	var margin = 40;
 	var max = d3.max(data, function(d) { return d.value });
 	var min = 0;
@@ -197,25 +198,18 @@ function draw() {
       });
 }
 
-var dateString, month, day, year;
-function generateData() {
-	var dataArr = [];
-	d3.csv("time.csv", function(data) {
-		data.forEach(function(d) {
-			dateString = d.date.toString();
-			month = parseInt(dateString.substring(4,6));
-			day = parseInt(dateString.substring(6,8));
-			year = parseInt(dateString.substring(0,4));
-			var date = new Date();
-			date.setMonth(month);
-			date.setDate(day);
-			date.setFullYear(year);
-			dataArr.push({'value' : d.prescriptions, 'date' : date});
-		});
-	});
-	
-	return dataArr;
-}
-
-d3.select('#button').on('click', draw);
-draw();
+queue()
+	.defer(d3.csv, "time.csv", function(d) {
+		var dateString = d.date.toString();
+		// value of month is the month number - 1 because the Date months are stored in a zero-based array
+		// i.e. 0 = January, 1 = February, etc.
+		var month = parseInt(dateString.substring(4,6)-1);
+		var day = parseInt(dateString.substring(6,8));
+		var year = parseInt(dateString.substring(0,4));
+		var date = new Date();
+		date.setMonth(month);
+		date.setDate(day);
+		date.setFullYear(year);
+		data.push({'value' : d.prescriptions, 'date' : date});
+	})
+	.await(draw);
