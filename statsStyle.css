@@ -122,3 +122,32 @@ label {
 .arc path {
   stroke: #fff;
 }
+
+/* Top drugs table. */
+#rounded-corner{
+    font-family:"Open Sans";
+    font-size:12px;
+    width:700px;
+    text-align:left;
+    border-collapse:collapse;
+    margin:20px;
+}
+
+#rounded-corner th{
+    font-weight:normal;
+    font-size:13px;
+    color: white;
+    background:#FE7569;
+    padding:8px;
+}
+
+#rounded-corner td{
+    background:	#FFC8C3;
+    border-top:1px solid #fff;
+    color:black;
+    padding:8px;
+}
+
+#rounded-corner tbody tr:hover td{
+    background:#CDFFFF;
+}

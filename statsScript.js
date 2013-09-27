@@ -95,7 +95,7 @@ heightGender = 220,
 radiusGender = Math.min(width, height) / 2;
 
 var color = d3.scale.ordinal()
-.range(["#FF0000", "#CDFFFF"]);
+.range(["#FE7569", "#CDFFFF"]);
 
 var arc = d3.svg.arc()
 .outerRadius(radiusGender - 20)
