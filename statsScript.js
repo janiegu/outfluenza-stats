@@ -131,5 +131,5 @@ d3.csv("gender.csv", function(error, data) {
 	      .attr("dy", ".35em")
 	      .style("text-anchor", "middle")
 	      .text(function(d) { return d.data.gender; });
-
 	});
+

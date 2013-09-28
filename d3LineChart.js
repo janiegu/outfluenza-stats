@@ -13,8 +13,19 @@ var svgTime = null,
 	dataCirclesGroup = null,
 	dataLinesGroup = null;
 
-var data=[];
-function draw(error, time) {
+var dataAll=[];
+var dataWeek, dataMonth, dataYear, data;
+function firstDraw(error, time) {
+	dataWeek = dataAll.slice(dataAll.length-7, dataAll.length);
+	dataMonth = dataAll.slice(dataAll.length-30, dataAll.length);
+	dataYear = dataAll.slice(dataAll.length-365, dataAll.length);
+	
+	// set default time frame to month
+	data = dataMonth;
+	draw();
+}
+
+function draw() {
 	var margin = 40;
 	var max = d3.max(data, function(d) { return d.value });
 	var min = 0;
@@ -210,6 +221,25 @@ queue()
 		date.setMonth(month);
 		date.setDate(day);
 		date.setFullYear(year);
-		data.push({'value' : d.prescriptions, 'date' : date});
+		dataAll.push({'value' : d.prescriptions, 'date' : date});
 	})
-	.await(draw);
+	.await(firstDraw);
+
+/* Dynamic switching for tabs */
+$('document').ready(function(){		
+	$('#flip-navigation li a').each(function(){
+		$(this).click(function(){
+			$('#flip-navigation li').each(function(){
+				$(this).removeClass('selected');
+			});
+			$(this).parent().addClass('selected');
+			var tabId=$(this).attr('id').substr(4);
+			if (tabId == 0) data = dataWeek;
+			else if (tabId == 1) data = dataMonth;
+			else if (tabId == 2) data = dataYear;
+			draw();
+			
+			return false;
+		});
+	});
+});
