@@ -5,8 +5,8 @@
     <title>Outfluenza</title>
     <link rel="stylesheet" href="./statsStyle.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="d3LineChart.css">
-    <link href="tipsy.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="./d3LineChart.css">
+    <link href="./tipsy.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
   <div class="border">
@@ -45,42 +45,48 @@
   <table id="rounded-corner">
 	<thead>
 	<tr>
+	<th scope="col" class="rounded-rank"></th>
 	<th scope="col" class="rounded-company">Drug</th>
-	<th scope="col" class="rounded-q1">Average Dosage</th>
-	<th scope="col" class="rounded-q2">Prescriptions in NJ</th>
-	<th scope="col" class="rounded-q3">Average prescriptions (across all states)</th>
+	<th scope="col" class="rounded-q1 drugData">Average Dosage</th>
+	<th scope="col" class="rounded-q2 drugData">Prescriptions in NJ</th>
+	<th scope="col" class="rounded-q3 drugData">Average prescriptions (across all states)</th>
 	</tr>
 	</thead>
 	<tbody>
 	<tr>
+	<td class="drugRank">1.</td>
 	<td><b>Tamiflu</b></td>
-	<td>3</td>
-	<td>423</td>
-	<td>335</td>
+	<td class="drugData">3</td>
+	<td class="drugData">423</td>
+	<td class="drugData">335</td>
 	</tr>
 	<tr>
+	<td class="drugRank">2.</td>
 	<td><b>Relenza</b></td>
-	<td>3</td>
-	<td>406</td>
-	<td>452</td>
+	<td class="drugData">3</td>
+	<td class="drugData">406</td>
+	<td class="drugData">452</td>
 	</tr>
 	<tr>
+	<td class="drugRank">3.</td>
 	<td><b>Symmetrel</b></td>
-	<td>3</td>
-	<td>302</td>
-	<td>333</td>
+	<td class="drugData">3</td>
+	<td class="drugData">302</td>
+	<td class="drugData">333</td>
 	</tr>
 	<tr>
+	<td class="drugRank">4.</td>
 	<td><b>Flumadine</b></td>
-	<td>1</td>
-	<td>156</td>
-	<td>223</td>
+	<td class="drugData">1</td>
+	<td class="drugData">156</td>
+	<td class="drugData">223</td>
 	</tr>
 	<tr>
+	<td class="drugRank">5.</td>
 	<td><b>Zanamivir</b></td>
-	<td>3</td>
-	<td>154</td>
-	<td>223</td>
+	<td class="drugData">3</td>
+	<td class="drugData">154</td>
+	<td class="drugData">223</td>
 	</tr>
 	</tbody>
 	</table>

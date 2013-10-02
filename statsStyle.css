@@ -127,7 +127,7 @@ label {
 
 /* Top drugs table. */
 #rounded-corner{
-    font-family:"Open Sans";
+    font-family:"Helvetica Neue", "Open Sans";
     font-size:12px;
     width:700px;
     text-align:left;
@@ -152,6 +152,15 @@ label {
 
 #rounded-corner tbody tr:hover td{
     background:#CDFFFF;
+}
+
+.drugRank {
+	font-weight: bold;
+	text-align: right;
+}
+
+.drugData {
+	text-align: center;
 }
 
 /* Tabs for time lapse graph. */
